@@ -32,7 +32,7 @@ describe("SimpleStorage", () => {
 
     it("Should push person into people array", async () => {
         const name = "Marco"
-        const favoriteNumber = 7
+        const favoriteNumber = "7"
 
         await simpleStorage.addPerson(name, favoriteNumber)
 
