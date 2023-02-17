@@ -1,7 +1,7 @@
 // imports
 // this hardhat ethers dependency wraps the normal ethers one
 // and knows about the hardhat structure, already compiled smart contracts, etc...
-const { ethers, run, network } = require("hardhat")
+import { ethers, run, network } from "hardhat"
 
 // async main
 async function main() {
@@ -32,7 +32,7 @@ async function main() {
     console.log(`Updated value is ${updatedValue}`)
 }
 
-async function verify(contractAddress, args) {
+async function verify(contractAddress: string, args: any[]) {
     console.log("Verifying contract...")
     try {
         // yarn hardhat verify --help
@@ -40,7 +40,7 @@ async function verify(contractAddress, args) {
             address: contractAddress,
             constructorArguments: args,
         })
-    } catch (error) {
+    } catch (error: any) {
         if (error.message.toLowerCase().includes("already verified")) {
             console.log("Alrrady Verified!")
         } else {

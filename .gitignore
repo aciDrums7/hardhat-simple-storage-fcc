@@ -10,4 +10,6 @@ cache
 artifacts
 gas-report.txt
 coverage
+typechain
+typechain-types
 
